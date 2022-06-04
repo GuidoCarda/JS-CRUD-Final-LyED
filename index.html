@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2dded7eaef.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <p>Trabajo promoción LyED</p>
+            <span>Guido Cardarelli</span>
+        </div>
+    </header>
+    <div class="container">
+        
+
+        <!-- Analytics cards -->
+
+        <div class="analytics-container">
+            
+
+            <div class="analytic">
+                <span class="analytic-icon"><i class="fas fa-boxes"></i></i></span>
+                <div class="analytic-info">
+                    <p>Stock total</p>
+                    <h3 class="analytic-total">75</h3>
+                </div>
+            </div>
+            <div class="info">
+                <h3>Categorias disponibles: </h3>
+                <div class="info-categorias">
+                    <span class="categoria componentes">componentes</span>
+                    <span class="categoria perifericos">perifericos</span>
+                    <span class="categoria monitores">monitores</span>
+                    <span class="categoria notebooks">notebooks</span>
+                </div>
+            </div>
+            <div class="analytic">
+                <span class="analytic-icon"><i class="fas fa-microchip"></i></i></span>
+                <div class="analytic-info">
+                    <p>Total componentes</p>
+                    <h3 class="analytic-total">25</h3>
+                </div>
+            </div>
+            <div class="analytic">
+                <span class="analytic-icon"><i class="far fa-keyboard"></i></span>
+                <div class="analytic-info">
+                    <p >Total perifericos</p>
+                    <h3 class="analytic-total">25</h3>
+                </div>
+            </div>
+            <div class="analytic">
+                <span class="analytic-icon"><i class="fas fa-desktop"></i></span>
+                <div class="analytic-info">
+                    <p>Total monitores</p>
+                    <h3 class="analytic-total">25</h3>
+                </div>
+            </div>
+            <div class="analytic">
+                <span class="analytic-icon"><i class="fas fa-laptop"></i></span>
+                <div class="analytic-info">
+                    <p>Total notebooks</p>
+                    <h3 class="analytic-total">25</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products table -->
+
+     
+        <button id="create-prod-btn">
+            <span>Nuevo producto</span>
+            <i class="fas fa-plus"></i>
+        </button>
+     
+        <div class="table-container">
+            <table id="products-table">
+                <tr class="table-header">
+                    <th>Código</th>
+                    <th>Categoria</th>
+                    <th>Producto</th>
+                    <th>Stock</th>
+                    <th>Costo</th>
+                    <th>IVA</th>
+                    <th>Costo total</th>
+                    <th></th>
+                </tr>
+                <tbody id="products-table-body">
+                    <!-- <tr>
+                        <td>02135</td>
+                        <td>Perifericos</td>
+                        <td>Teclado RedDragon Kumara</td>
+                        <td>10</td>
+                        <td>$5000</td>
+                        <td>$525</td>
+                        <td>$5525</td>
+                        <td class="row-options">
+                            <button>BORRAR</button>
+                            <button>EDITAR</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>02135</td>
+                        <td>Perifericos</td>
+                        <td>Teclado RedDragon Kumara</td>
+                        <td>10</td>
+                        <td>$5000</td>
+                        <td>$525</td>
+                        <td>$5525</td>
+                        <td class="row-options">
+                            <button>BORRAR</button>
+                            <button>EDITAR</button>
+                        </td>
+                    </tr>
+                    -->
+                </tbody>
+            </table>
+        </div>
+        
+
+       
+    </div>
+    
+    
+    
+    <!-- Modal overlay -->
+    
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <div>
+                    <h3>Nuevo producto</h3>
+                    <span>complete los campos</span>
+                </div>
+                <button id="modal-close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="modal-form">
+                <div class="modal-field-container">
+                    <label for="">Código de producto</label>
+                    <input type="text" class="modal-field" data-index="new" id="codigoProd">
+                </div>
+                <div class="modal-field-container">
+                    <div class="dropdown">
+                        <label for="">Categoria</label>
+                        <div class="select">    
+                            <div class="select-content">
+                              <span class="categoria">Categorias</span>
+                            </div>
+                            <span class="select-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="options">
+                          <button class="option" data-category="componentes">
+                            <span class="categoria componentes">componentes</span>
+                          </button>
+                            <button class="option" data-category="notebooks">
+                            <span class="categoria notebooks">notebooks</span>
+                          </button>
+                          <button class="option" data-category="audio">
+                            <span class="categoria monitores">monitores</span>
+                          </button>
+                          <button class="option" data-category="perifericos">
+                            <span class="categoria perifericos">perifericos</span>
+                          </button>
+                        </div>
+                      </div>
+                      <input type="hidden" name="categoria" id="catProd" class="modal-field" value="">
+                </div>
+                <div class="modal-field-container">
+                    <label for="">Producto</label>
+                    <input type="text" class="modal-field" id="producto">
+                </div>
+                <div class="modal-field-container">
+                    <label for="">Stock</label>
+                    <input type="text" class="modal-field" id="stockProd">
+                </div>
+                <div class="modal-field-container">
+                    <label for="">Costo</label>
+                    <input type="text" class="modal-field" id="costoProd">
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button id="cancelarProd">CANCELAR</button>
+                <button id="guardarProd">GUARDAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
